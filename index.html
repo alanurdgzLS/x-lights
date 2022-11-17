@@ -7,22 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a202190239.js" crossorigin="anonymous"></script>
-    <title>X-Lights</title>
+    <title>Xtra-Lights</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar-home">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-warning" id="navbar-home">
+        <div class="container flex align-content-center">
             <a class="navbar-brand" href="#"><img width="50px" height="50px" src="./assets/img/logo-x.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse flex align-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -36,11 +36,31 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#form">Contactanos</a>
                     </li>
+                    <li class="nav-item submenu">
+                        <i class="fa-solid fa-cart-shopping" style="color: white; height: 20px;"></i>
+                        <div id="cart">
+                            <table id="cart-items" class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                            <a href="#" id="pay" class="btn btn-success w-100 my-2">Proceder al Pago</a>
+                            <a href="#" id="empty-cart" class="btn btn-danger w-100">Vaciar Carrito</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <section class="container-fluid" id="slider-home">
+    <section class="container" id="slider-home">
         <div class="row">
             <div class="col-12">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -84,7 +104,7 @@
     <section class="container-fluid bg-dark" id="meetus-home">
         <div class="row" data-aos="fade-right">
             <div class="col-12">
-                <h1>Conocenos</h1>
+                <h1 class="text-warning">Conócenos</h1>
             </div>
             <div class="col-12">
                 <h5>
@@ -105,39 +125,41 @@
     <br>
     <br>
     <section class="container" data-aos="fade-down" id="location-home">
-        <div class="row">
+        <div class="row" id="products-list">
             <div class="col-12">
-                <h1>Destinos</h1>
+                <h1>Productos</h1>
             </div>
             <div class="col-12 col-lg-4 col-md-6 col-sm-12">
                 <div class="card mt-2" style="width: 18rem;">
-                    <img src="./assets/img/lampara-1.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <img src="./assets/img/lampara-1.jpeg" class="card-img-top" alt="...">
                         <h5 class="card-title">Lamparas pequeñas</h5>
                         <p class="card-text">El tamaño no es un impedimento para que la decoración no sea increíble.</p>
-                        <a href="" target="blank" class="btn btn-dark">Agregar al carrito</a>
+                        <h6 class="price text-lg-start">$<span>300</span></h6>
+                        <button class="btn btn-dark add-to-cart" data-id="1">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-4 col-md-6 col-sm-12">
                 <div class="card mt-2" style="width: 18rem;">
-                    <img src="./assets/img/lampara-2.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <img src="./assets/img/lampara-2.jpeg" class="card-img-top" alt="...">
                         <h5 class="card-title">Lamparas Bicolor</h5>
                         <p class="card-text">Puedes elegir diferentes colores en yus lamparas pueden ser dos o más.</p>
-                        <a href="" target="blank" class="btn btn-dark">Agregar al carrito</a>
+                        <h6 class="price text-lg-start">$<span>450</span></h6>
+                        <button class="btn btn-dark add-to-cart" data-id="2">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-4 col-sm-12 col-md-12">
                 <div class="card mt-2" style="width: 18rem;">
-                    <img src="./assets/img/lampara-3.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <img src="./assets/img/lampara-3.jpeg" class="card-img-top" alt="...">
                         <h5 class="card-title">Lamparas con forma</h5>
                         <p class="card-text">Puedes elegir cualquier forma para tus lamparas y que tu diseño sea
                             especial.</p>
-                        <a href="""
-                            target=" blank" class="btn btn-dark">Agregar al carrito</a>
+                            <h6 class="price text-lg-start">$<span>800</span></h6>
+                        <button class="btn btn-dark add-to-cart" data-id="3">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -148,7 +170,9 @@
     <section id="form" class="container">
         <div class="row">
             <h1 data-aos="fade-down">Contactanos</h1>
-            <h5 class="col-12 col-md-8 col-lg-8" data-aos="fade-down">Nos puedes dejar tus datos para hacerte saber acerca de promociones o descuentos y brindarte toda la información de nuestros productos</h5>
+            <h5 class="col-12 col-md-8 col-lg-8" data-aos="fade-down">
+                Si requieres de algún diseño personalizado, puedes contactarnos para cotizar tu modelo a tu medida
+            </h5>
             <br>
             <br>
             <form class="col-12 col-md-8 col-lg-6 mt-4">
@@ -188,36 +212,10 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/app.js"></script>
     <script>
         AOS.init();
     </script>
-    <!--
-   <script async
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh0jVdLnt3BvZZtXMxjMOXnWLGRS3XMv4&callback=iniciaMapa">
-</script>
-    <script>
-        // Coordenadas Manhattan:  40.76593140546304, -73.96751680488012
-        function iniciaMapa(){
-          var coordenadas = {
-            lat: 40.76593140546304,
-            lng: -73.96751680488012,
-          }
-  
-          var map= new google.maps.Map(
-            document.getElementById('mapa'),
-            {
-              center: coordenadas,
-              zoom: 15
-            }
-          );
-  
-          var marcador = new google.maps.Marker({
-            position: coordenadas,
-            map: map
-          });
-        }
-    </script>
--->
 </body>
 
 </html>

@@ -74,3 +74,32 @@
 #footer-home h6 {
     margin: 0px;
 }
+
+.submenu {
+    position: relative;
+}
+
+.submenu #cart{
+    display: none;
+}
+
+.submenu:hover #cart{
+    display: block;
+    position: absolute;
+    right:0;
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 500px;
+}
+
+.remove-product {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
