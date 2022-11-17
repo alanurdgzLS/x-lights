@@ -83,17 +83,21 @@
     display: none;
 }
 
-.submenu:hover #cart{
+.fa-cart-shopping {
+    cursor: pointer;
+}
+
+/* .submenu:hover #cart{
     display: block;
     position: absolute;
-    right:0;
+    right: 0;
     top:100%;
     z-index: 1;
     background-color: white;
     padding: 20px;
     min-height: 400px;
     min-width: 500px;
-}
+} */
 
 .remove-product {
     background-color: red;
