@@ -1,9 +1,12 @@
 const cart = document.querySelector('#cart');
+const cartContent = document.querySelector('#cart-content');
 const cartContainer = document.querySelector('#cart-items tbody');
 const emptyCartButton = document.querySelector('#empty-cart');
 const productsList = document.querySelector('#products-list');
 const total = document.querySelector('#total');
 const shoppingCart = document.querySelector('.fa-cart-shopping');
+const emptyCartLabel = document.querySelector('#empty-cart-label');
+
 let cartItems = [];
 
 loadEventListeners();
@@ -16,8 +19,16 @@ function loadEventListeners() {
     shoppingCart.addEventListener('click', toggleCartVisibility);
     cart.addEventListener('click', removeProduct);
     emptyCartButton.addEventListener('click', () => {
+        // Remove all products from array
         cartItems = [];
+
+        // Clear all table rows
         clearHTML();
+
+        // Check how many items are on the cart
+        checkCartLength();
+
+        // Render view
         showCart();
     });
 }
@@ -40,12 +51,25 @@ function toggleCartVisibility() {
         cart.style.right = 0;
         cart.style.position = '%100';
         cart.style.zIndex = 2;
-        cart.style.backgroundColor = 'white';
+        // cart.style.backgroundColor = 'white';
         cart.style.padding = '20px';
         cart.style.minWidth = '500px';
         // cart.style.minHeight = '500px';
+
+
+        checkCartLength();
     } else {
         cart.style.display = 'none';
+    }
+}
+
+function checkCartLength() {
+    if (cartItems.length === 0) {
+        cartContent.classList.add('hidden');
+        emptyCartLabel.classList.remove('hidden');
+    } else {
+        emptyCartLabel.classList.add('hidden');
+        cartContent.classList.remove('hidden');
     }
 }
 
@@ -55,6 +79,9 @@ function removeProduct(event) {
 
         // Get all items except for the one that matches the id
         cartItems = cartItems.filter(product => product.id !== productId);
+
+        // Check how many items are in the cart
+        checkCartLength();
 
         // Update view
         showCart();
@@ -111,6 +138,7 @@ function showCart() {
             <td>${quantity}</td>
             <td><a href="#" class="remove-product" data-id="${id}">X</td>
         `;
+        row.classList.add('bg-dark', 'text-white');
 
         subtotal += (Number(price) * quantity);
         

@@ -107,3 +107,12 @@
     color: white;
     font-weight: bold;
 }
+
+.remove-product:hover {
+    background-color: rgb(199, 5, 5);
+    color: rgb(204, 199, 199);
+}
+
+.hidden {
+    display: none;
+}
