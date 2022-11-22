@@ -6,6 +6,7 @@ const productsList = document.querySelector('#products-list');
 const total = document.querySelector('#total');
 const shoppingCart = document.querySelector('.fa-cart-shopping');
 const emptyCartLabel = document.querySelector('#empty-cart-label');
+const payButton = document.querySelector('#pay');
 
 let cartItems = [];
 
@@ -30,6 +31,9 @@ function loadEventListeners() {
 
         // Render view
         showCart();
+    });
+    payButton.addEventListener('click', () => {
+        localStorage.setItem('products', JSON.stringify(cartItems));
     });
 }
 
